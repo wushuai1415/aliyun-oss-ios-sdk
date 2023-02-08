@@ -21,7 +21,7 @@ let package = Package(
         .target(
             name: "AliyunOSSiOS",
             dependencies: [],
-            path: "AliyunOSSSDK",
+            sources: ["AliyunOSSSDK"],
             publicHeadersPath: "include"),
 //        .testTarget(
 //            name: "AliyunOSSiOSTests",
