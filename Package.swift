@@ -21,8 +21,14 @@ let package = Package(
         .target(
             name: "AliyunOSSiOS",
             dependencies: [],
-            sources: ["AliyunOSSSDK"],
-            publicHeadersPath: "include"),
+            path: "AliyunOSSSDK",
+            sources: [""],
+            publicHeadersPath: "include",
+            linkerSettings: [
+                .linkedLibrary("libresolv.tbd"),
+                .linkedLibrary("CoreTelephony.framework"),
+                .linkedLibrary("SystemConfiguration.framework")
+            ]),
 //        .testTarget(
 //            name: "AliyunOSSiOSTests",
 //            dependencies: ["AliyunOSSiOS"],
