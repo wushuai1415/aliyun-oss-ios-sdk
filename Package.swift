@@ -23,7 +23,7 @@ let package = Package(
             dependencies: [],
             path: "AliyunOSSSDK",
             linkerSettings: [
-                .linkedLibrary("libresolv"),
+                .linkedLibrary("resolv"),
                 .linkedFramework("CoreTelephony"),
                 .linkedFramework("SystemConfiguration")
             ]
