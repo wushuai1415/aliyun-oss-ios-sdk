@@ -18,17 +18,15 @@ let package = Package(
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
+        .systemLibrary(name: "libresolv.tbd"),
+        .systemLibrary(name: "CoreTelephony.framework"),
+        .systemLibrary(name: "SystemConfiguration.framework"),
         .target(
             name: "AliyunOSSiOS",
-            dependencies: [],
+            dependencies: [.byName(name: "libresolv.tbd")],
             path: "AliyunOSSSDK",
-            sources: [""],
-            publicHeadersPath: "include",
-            linkerSettings: [
-                .linkedLibrary("libresolv.tbd"),
-                .linkedLibrary("CoreTelephony.framework"),
-                .linkedLibrary("SystemConfiguration.framework")
-            ]),
+            sources: ["OSSTask"],
+            publicHeadersPath: "include")
 //        .testTarget(
 //            name: "AliyunOSSiOSTests",
 //            dependencies: ["AliyunOSSiOS"],
